@@ -1,0 +1,95 @@
+﻿
+
+<form novalidate (ngSubmit)="onSubmit(form.value)" (ngReset)="onReset(form)" [formGroup]="form">
+    <div *ngFor="let prop of dataObject.data; let index=index;">
+        <div [ngSwitch]="prop.type|lowercase">
+
+            <div *ngSwitchCase="'text'">
+                <label [for]="prop.key">{{prop.label}}</label>
+                <input [formControlName]="prop.key"
+                       [id]="prop.key" [type]="prop.type">
+            </div>
+
+            <div *ngSwitchCase="'radio'">
+                <label [for]="prop.key">{{prop.label}}</label>
+                <label *ngFor="let option of prop.options">
+                    <input type="radio"
+                           [name]="prop.key"
+                           [formControlName]="prop.key"
+                           [value]="option.value"> {{option.label}}
+                </label>
+            </div>
+
+            <div *ngSwitchCase="'select'">
+                <label [for]="prop.key">{{prop.label}}</label>
+                <select [formControlName]="prop.key">
+                    <option value="">--select--</option>
+                    <option *ngFor="let option of prop.options" [value]="option.value">
+                        {{ option.label }}
+                    </option>
+                </select>
+            </div>
+
+            <div *ngSwitchCase="'file'">
+                <label [for]="prop.key">{{prop.label}}</label>
+                <!--<input type="file" [name]="prop.key" [formControlName]="prop.key" />-->
+                <p-fileUpload name="prop.key" multiple="multiple" (onSelect)="onSelect($event)"></p-fileUpload>
+            </div>
+
+            <div *ngSwitchCase="'check'">
+                <input type="checkbox"
+                       [name]="prop.key"
+                       [formControlName]="prop.key"
+                       [value]="prop.value"> {{prop.label}}
+            </div>
+
+            <div *ngSwitchCase="'multicheck'">
+                <label [for]="prop.key">{{prop.label}}</label>  
+                <label *ngFor="let option of prop.options">
+                    <input type="checkbox" [value]="option.value" (change)="onChange(option.value, $event.target.checked)"> 
+                    {{option.label}}
+                </label>
+            </div>
+
+            <div *ngSwitchCase="'multiple'">
+                <label [for]="prop.key">{{prop.label}}</label>
+                <select multiple [formControlName]="prop.key">
+                    <option *ngFor="let option of prop.options" [value]="option.value">
+                        {{ option.label }}
+                    </option>
+                </select>
+            </div>
+
+            <div *ngSwitchCase="'datepicker'">
+                <label [for]="prop.key">{{prop.label}}</label>
+                <my-date-picker id="prop.key" name="prop.key" [formControlName]="prop.key" [options]="myDatePickerOptions">
+                </my-date-picker>
+            </div>
+
+        </div>
+
+        <div class="error" *ngIf="form.get(prop.key).invalid && (form.get(prop.key).dirty || form.get(prop.key).touched)">
+            <div *ngIf="form.get(prop.key).errors.required">
+                {{ prop.label }} is required.
+            </div>
+            <div *ngIf="form.get(prop.key).errors.minlength">
+                {{ prop.label }} can be max 2 degit long.
+            </div>
+            <div *ngIf="form.get(prop.key).errors.email">
+                {{ prop.label }} can not be valid.
+            </div>
+            <div *ngIf="form.get(prop.key).errors.needsExclamation">
+                {{ prop.label }} required exclamation.
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit" [disabled] = "!form.valid">Save</button>
+        <button type="reset">Reset</button>
+    </div>
+</form>
+<hr />
+<strong>Form Value</strong>
+<pre>{{ form.value | json }}</pre>
+<strong>Form is valid:</strong> {{form.valid}}

@@ -1,0 +1,214 @@
+﻿{
+  "data": [
+    {
+      "key": "name",
+      "label": "Name",
+      "value": "Debasis",
+      "type": "text",
+      "order": 1,
+      "options": null,
+      "validation": [
+        {
+          "required": true,
+          "needsExclamation": true
+        }
+      ]
+    },
+    {
+      "key": "age",
+      "label": "Age",
+      "value": 32,
+      "type": "text",
+      "order": 2,
+      "options": null,
+      "validation": [
+        {
+          "required": false,
+          "min": 2
+        }
+      ]
+    },
+    {
+      "key": "gender",
+      "label": "Gender",
+      "value": "M",
+      "type": "radio",
+      "order": 3,
+      "options": [
+        {
+          "label": "Male",
+          "value": "M"
+        },
+        {
+          "label": "Female",
+          "value": "F"
+        }
+      ],
+      "validation": [
+        { "required": false }
+      ]
+    },
+    {
+      "key": "city",
+      "label": "City",
+      "value": "",
+      "type": "select",
+      "order": 4,
+      "options": [
+        {
+          "label": "Bolzano",
+          "value": "1"
+        },
+        {
+          "label": "Meltina",
+          "value": "2"
+        },
+        {
+          "label": "Appiano",
+          "value": "3"
+        }
+      ],
+      "validation": [
+        { "required": true }
+      ]
+    },
+    {
+      "key": "email",
+      "label": "Email",
+      "value": null,
+      "type": "text",
+      "order": 5,
+      "options": null,
+      "validation": [
+        {
+          "required": true,
+          "email": true
+        }
+      ]
+    },
+    {
+      "key": "uploadfile",
+      "label": "Upload",
+      "value": null,
+      "type": "file",
+      "order": 6,
+      "options": null,
+      "validation": null
+    },
+    {
+      "key": "place",
+      "label": "Place",
+      "value": "",
+      "type": "select",
+      "order": 7,
+      "options": [
+        {
+          "label": "aaa",
+          "value": "1",
+          "cityid": "1"
+        },
+        {
+          "label": "bbb",
+          "value": "2",
+          "cityid": "1"
+        },
+        {
+          "label": "ccc",
+          "value": "3",
+          "cityid": "1"
+        },
+        {
+          "label": "ddd",
+          "value": "4",
+          "cityid": "2"
+        },
+        {
+          "label": "eee",
+          "value": "5",
+          "cityid": "2"
+        }
+      ],
+      "validation": [
+        { "required": true }
+      ]
+    },
+    {
+      "key": "isactive",
+      "label": "Is Active",
+      "value": true,
+      "type": "check",
+      "order": 8,
+      "options": null,
+      "validation": [
+        { "required": false }
+      ]
+    },
+    {
+      "key": "group",
+      "label": "Group",
+      "value": null,
+      "type": "multicheck",
+      "order": 9,
+      "options": [
+        {
+          "label": "KT",
+          "value": "1"
+        },
+        {
+          "label": "KM",
+          "value": "2"
+        },
+        {
+          "label": "KaPS",
+          "value": "3"
+        },
+        {
+          "label": "DA",
+          "value": "4"
+        }
+      ],
+      "validation": [
+        { "required": false }
+      ]
+    },
+    {
+      "key": "skills",
+      "label": "Technical Skills",
+      "value": null,
+      "type": "multiple",
+      "order": 10,
+      "options": [
+        {
+          "label": ".Net MVC",
+          "value": "1"
+        },
+        {
+          "label": "Angular2",
+          "value": "2"
+        },
+        {
+          "label": "Sql Server",
+          "value": "3"
+        },
+        {
+          "label": "Entity Framework",
+          "value": "4"
+        }
+      ],
+      "validation": [
+        { "required": false }
+      ]
+    },
+    {
+      "key": "date",
+      "label": "Date",
+      "value": "",
+      "type": "datepicker",
+      "order": 11,
+      "options": null,
+      "validation": [
+        { "required": false }
+      ]
+    }
+  ]
+}
