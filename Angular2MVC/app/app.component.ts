@@ -1,4 +1,7 @@
-﻿import { Component } from "@angular/core"
+﻿import { Component, OnInit } from "@angular/core"
+import { Router } from "@angular/router";
+//import { AdalService } from "ng2-adal/dist/services/adal.service";
+//import { SecretService } from './Service/login.service';
 
 @Component({
     selector: "user-app",
@@ -22,6 +25,21 @@
                 `
 })
 
-export class AppComponent {
-    constructor() { }
+export class AppComponent implements OnInit {
+    
+    //profile: any;
+
+    constructor(
+        //private adalService: AdalService,
+        //private secretService: SecretService,
+        private router: Router) {
+        //this.adalService.init(this.secretService.adalConfig);
+    }
+    
+
+    ngOnInit(): void {
+        //this.adalService.handleWindowCallback();
+        //this.adalService.getUser();
+    }
+    
 }

@@ -29,7 +29,10 @@
             'ng2-bs3-modal': 'npm:/ng2-bs3-modal',
             'primeng': 'npm:/primeng',
             'mydatepicker': 'npm:mydatepicker/bundles/mydatepicker.umd.min.js',
-            'angular-d3-charts': 'npm:/angular-d3-charts'
+            'angular-d3-charts': 'npm:/angular-d3-charts',
+            //'ng2-adal': 'npm:ng2-adal',
+            //'ng2-adal-popup-fork': 'npm:ng2-adal-popup-fork',
+            'ng2-charts': 'npm:ng2-charts/bundles/ng2-charts.umd.min.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -41,7 +44,9 @@
 
             'ng2-bs3-modal': { main: '/bundles/ng2-bs3-modal.js', defaultExtension: 'js' },
             'primeng': { defaultExtension: "js" },
-            'angular-d3-charts': { main: 'main.js', defaultExtension: "js" }
+            'angular-d3-charts': { main: 'main.js', defaultExtension: "js" },
+            //'ng2-adal': { main: '/dist/core/core.js', defaultExtension: 'js' },
+            //'ng2-adal-popup-fork': { main: 'core.js', defaultExtension: 'js' }
         }
     });
 })(this);

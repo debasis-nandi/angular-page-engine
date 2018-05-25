@@ -19,6 +19,14 @@ import { PageEngineService } from './page-engine/page-engine.service';
 import { MyDatePickerModule } from 'mydatepicker';
 import { ChartComponent } from './components/chart.component';
 import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'angular-d3-charts';
+import { LoginComponent } from './components/login.component';
+
+//import { AdalService } from 'ng2-adal/dist/core';
+//import { AdalService } from "ng2-adal/dist/services/adal.service";
+import { LoggedInGuard } from './guard/login.guard';
+import { SecretService } from './service/login.service';
+
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
     imports: [
@@ -30,7 +38,8 @@ import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'an
         DataTableModule,
         PaginatorModule,
         FileUploadModule,
-        MyDatePickerModule
+        MyDatePickerModule,
+        ChartsModule
     ],
     declarations: [
         AppComponent,
@@ -41,13 +50,17 @@ import { DoughnutChartComponent, PieChartComponent, BarChartComponent } from 'an
         DynamicFormComponent,
         PageEngineComponent,
         //BarChartComponent,
-        ChartComponent
+        ChartComponent,
+        LoginComponent
     ],
     providers: [
         { provide: APP_BASE_HREF, useValue: '/' },
         UserService,
         CarService,
-        PageEngineService
+        PageEngineService,
+        //AdalService,
+        //SecretService,
+        //LoggedInGuard
     ],
     bootstrap: [
         AppComponent

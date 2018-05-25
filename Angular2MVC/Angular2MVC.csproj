@@ -191,6 +191,7 @@
     <Content Include="app\Components\chart.component.html" />
     <Content Include="app\Components\datatable.component.html" />
     <Content Include="app\Components\db.component.html" />
+    <Content Include="app\Components\login.component.html" />
     <Content Include="app\Components\user.component.html" />
     <Content Include="app\Model\user.js" />
     <Content Include="app\page-engine\dynamic.component.html" />
@@ -298,7 +299,9 @@
     <TypeScriptCompile Include="app\Components\datatable.component.ts" />
     <TypeScriptCompile Include="app\Components\db.component.ts" />
     <TypeScriptCompile Include="app\Components\home.component.ts" />
+    <TypeScriptCompile Include="app\Components\login.component.ts" />
     <TypeScriptCompile Include="app\Components\user.component.ts" />
+    <TypeScriptCompile Include="app\guard\login.guard.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\Model\user.ts" />
     <TypeScriptCompile Include="app\page-engine\dynamic.component.ts" />
@@ -306,6 +309,7 @@
     <TypeScriptCompile Include="app\page-engine\page-engine.service.ts" />
     <TypeScriptCompile Include="app\page-engine\pagedata.ts" />
     <TypeScriptCompile Include="app\Service\car.service.ts" />
+    <TypeScriptCompile Include="app\Service\login.service.ts" />
     <TypeScriptCompile Include="app\Service\user.service.ts" />
     <TypeScriptCompile Include="app\Shared\enum.ts" />
     <TypeScriptCompile Include="app\Shared\global.ts" />

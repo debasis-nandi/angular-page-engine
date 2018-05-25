@@ -28,6 +28,8 @@ var page_engine_component_1 = require('./page-engine/page-engine.component');
 var page_engine_service_1 = require('./page-engine/page-engine.service');
 var mydatepicker_1 = require('mydatepicker');
 var chart_component_1 = require('./components/chart.component');
+var login_component_1 = require('./components/login.component');
+var ng2_charts_1 = require('ng2-charts');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -42,7 +44,8 @@ var AppModule = (function () {
                 primeng_1.DataTableModule,
                 primeng_1.PaginatorModule,
                 primeng_1.FileUploadModule,
-                mydatepicker_1.MyDatePickerModule
+                mydatepicker_1.MyDatePickerModule,
+                ng2_charts_1.ChartsModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -53,13 +56,14 @@ var AppModule = (function () {
                 dynamic_component_1.DynamicFormComponent,
                 page_engine_component_1.PageEngineComponent,
                 //BarChartComponent,
-                chart_component_1.ChartComponent
+                chart_component_1.ChartComponent,
+                login_component_1.LoginComponent
             ],
             providers: [
                 { provide: common_1.APP_BASE_HREF, useValue: '/' },
                 user_service_1.UserService,
                 car_service_1.CarService,
-                page_engine_service_1.PageEngineService
+                page_engine_service_1.PageEngineService,
             ],
             bootstrap: [
                 app_component_1.AppComponent
